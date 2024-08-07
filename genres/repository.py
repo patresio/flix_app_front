@@ -25,7 +25,7 @@ class GenreRepository:
         response = requests.post(self.__genres_url, headers=self.__headers, data=genre)
         if response.status_code == 201:
             return response.json()
-        if response.status_code == 401:
+        if response.status_code == 401 or response.status_code == 403:
             logout()
             return None
         raise Exception(

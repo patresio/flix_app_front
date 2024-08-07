@@ -22,7 +22,7 @@ class ActorRepository:
         )
 
     def create_actor(self, actor):
-        response = requests.post(self.__genres_url, headers=self.__headers, data=actors)
+        response = requests.post(self.__actors_url, headers=self.__headers, data=actor)
         if response.status_code == 201:
             return response.json()
         if response.status_code == 401:

@@ -8,6 +8,6 @@ class ActorService:
     def get_actors(self):
         return self.actor_repository.get_actors()
 
-    # def create_genre(self, name):
-    #     genre = dict(name=name)
-    #     return self.actor_repository.create_genre(genre)
+    def create_actor(self, name, birthday, nationality):
+        actor = dict(name=name, birthday=birthday, nationality=nationality)
+        return self.actor_repository.create_actor(actor)
